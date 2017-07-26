@@ -1,0 +1,94 @@
+/*
+* Staff
+*/
+
+.staff-list {
+  letter-spacing: -4px;
+  padding-top: 40px;
+
+  @include breakpoint(widescreen) {
+    padding-top: 30px;
+  }
+
+  @include breakpoint(desktop) {
+    padding-top: 10px;
+  }
+
+  @include breakpoint(tablet) {
+    padding-top: 0;
+  }
+
+  .staff {
+    width: 20%;
+    display: inline-block;
+    vertical-align: top;
+    letter-spacing: 0;
+    padding: 0 15px 35px;
+
+    @include breakpoint(widescreen) {
+      width: 25%;
+      padding-bottom: 5px;
+    }
+
+    @include breakpoint(tablet) {
+      width: 50%;
+    }
+
+    a:hover {
+      color: #000;
+
+      .img {
+        &:after,
+        span {
+          opacity: 1;
+        }
+      }
+    }
+
+    .img {
+      position: relative;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      padding-bottom: 123%;
+      margin-bottom: 25px;
+
+      @include breakpoint(widescreen) {
+        margin-bottom: 20px;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(#fff, 0.85);
+        opacity: 0;
+        transition: opacity .2s;
+      }
+
+      span {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        z-index: 10;
+        font-size: 40px;
+        opacity: 0;
+        transition: opacity .2s;
+
+        @include breakpoint(tablet) {
+          font-size: 24px;
+        }
+      }
+    }
+
+    ul {
+      li {
+        padding-left: 9px;
+      }
+    }
+  }
+}

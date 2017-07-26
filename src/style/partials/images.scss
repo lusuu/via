@@ -1,0 +1,101 @@
+/*
+* Images
+*/
+
+.full-width-img {
+  margin-bottom: 130px;
+
+  @include breakpoint(desktop) {
+    margin-bottom: 90px;
+  }
+
+  @include breakpoint(tablet) {
+    margin-bottom: 54px;
+  }
+
+  &.has-decoration {
+    position: relative;
+
+    &:after {
+      content: '\e902';
+      font-size: 130px;
+      line-height: 1;
+      position: absolute;
+      bottom: -65px;
+      left: 123px;
+      font-family: 'icomoon' !important;
+
+      @include breakpoint(widescreen) {
+        left: 85px;
+      }
+
+      @include breakpoint(desktop) {
+        font-size: 65px;
+        bottom: -32px;
+        left: 42px;
+      }
+
+      @include breakpoint(tablet) {
+        font-size: 55px;
+        bottom: -28px;
+        left: 31px;
+      }
+    }
+  }
+}
+
+.img-center {
+  padding: 122px 15px 80px;
+  text-align: center;
+
+  &.small-padding {
+    padding: 70px 15px 25px;
+
+    @include breakpoint(widescreen) {
+      padding: 40px 0px 70px;
+    }
+
+    @include breakpoint(desktop) {
+      padding: 20px 0px 30px;
+    }
+  }
+
+  @include breakpoint(widescreen) {
+    padding: 67px 0 80px;
+  }
+
+  @include breakpoint(desktop) {
+    padding: 32px 0 48px;
+  }
+
+  @include breakpoint(tablet) {
+    padding: 15px 0 60px;
+  }
+}
+
+.two-images {
+  padding: 68px 0 56px;
+
+  @include breakpoint(widescreen) {
+    padding: 50px 0 55px;
+  }
+
+  @include breakpoint(desktop) {
+    padding: 32px 0 45px;
+  }
+
+  @include breakpoint(tablet) {
+    padding: 12px 0 0;
+  }
+
+  .img-box {
+    background-size: cover;
+    padding-bottom: 135%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+
+    @include breakpoint(tablet) {
+      margin-bottom: 36px;
+    }
+  }
+}

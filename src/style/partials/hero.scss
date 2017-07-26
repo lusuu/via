@@ -1,0 +1,101 @@
+/*
+* Hero
+*/
+
+.hero-holder {
+	overflow: hidden;
+}
+
+.hero {
+	position: relative;
+	padding-bottom: 63%;
+	background-color: #eee;
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-bottom: 38px;
+
+	@include breakpoint(widescreen) {
+		margin: 20px 0 17px;
+	}
+
+	@include breakpoint(desktop) { 
+		margin-bottom: 14px;
+	}
+
+	@include breakpoint(mobile) {
+		padding-bottom: 133%;
+		margin-bottom: 22px;
+	}
+
+	&-logo {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		max-width: 840px;
+
+		@include breakpoint(widescreen) {
+			max-width: 600px;
+		}
+
+		@include breakpoint(desktop) {
+			max-width: 440px;
+		}
+
+		@include breakpoint(tablet) {
+			max-width: 350px;
+		}
+
+		@include breakpoint(mobile) {
+			max-width: 270px;
+			transform: rotate(-90deg);
+			transform-origin: 50% 50%;
+			left: 50%;
+			top: 50%;
+			margin: -28px 0 0 -135px;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	&-description {
+		max-width: 45%;
+		float: right;
+		position: relative;
+
+		@include breakpoint(widescreen) {
+			max-width: 53%;
+		}
+
+		@include breakpoint(desktop) {
+			max-width: 64%;
+		}
+
+		@include breakpoint(mobile) {
+			max-width: 79%;
+			font-size: 12px;
+			line-height: 20px;
+		}
+
+		i {
+			position: absolute;
+			left: -44px;
+			top: 2px;
+			font-size: 24px;
+
+			@include breakpoint(desktop) {
+				font-size: 18px;
+				left: -30px;
+			}
+
+			@include breakpoint(mobile) {
+				font-size: 15px;
+			}
+		}
+	}
+}

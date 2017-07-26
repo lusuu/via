@@ -1,0 +1,159 @@
+/*
+* Social block
+*/
+
+.social {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px 115px;
+
+	@include breakpoint(widescreen) {
+		margin: 0 -30px;
+		padding-bottom: 90px;
+	}
+
+	@include breakpoint(desktop) {
+		margin: 0;
+		padding-bottom: 70px;
+	}
+
+	@include breakpoint(tablet) {
+		padding: 0 15px 30px;
+	}
+
+	.container {
+		@extend .clearfix;
+
+		@include breakpoint(widescreen) {
+			padding: 0;
+		}
+	}
+
+	.heading {
+		position: relative;
+		float: left;
+		width: 225px;
+
+		@include breakpoint(widescreen) {
+			width: 185px;
+		}
+
+		@include breakpoint(desktop) {
+			width: 175px;
+		}
+
+		@include breakpoint(tablet) {
+			float: none;
+			width: 100%;
+			padding: 0 0 17px 30px;
+		}
+
+		h2 {
+			margin-bottom: 27px;
+
+			@include breakpoint(widescreen) {
+				font-size: 36px;
+				margin-bottom: 37px;
+			}
+
+			@include breakpoint(desktop) {
+				font-size: 24px;
+				margin-bottom: 16px;
+			}
+
+			@include breakpoint(tablet) {
+				display: inline-block;
+				vertical-align: top;
+				margin-right: 50px;
+			}
+		}
+
+		.icon-slash {
+			display: block;
+			margin-bottom: 30px;
+			font-size: 129px;
+
+			@include breakpoint(widescreen) {
+				font-size: 120px;
+			}
+
+			@include breakpoint(desktop) {
+				font-size: 65px;
+				margin-bottom: 27px;
+			}
+
+			@include breakpoint(tablet) {
+				font-size: 55px;
+				margin-bottom: 18px;
+			}
+		}
+	}
+
+	.social-links {
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	li {
+		display: inline-block;
+		vertical-align: middle;
+		padding-right: 20px;
+
+		@include breakpoint(tablet) {
+			padding-right: 34px;
+		}
+
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+
+	a {
+		&:hover {
+			color: #b3b3b3;
+		}
+	}
+
+	.social-imgs {
+		float: left;
+		width: calc(100% - 210px);
+		margin-right: -15px;
+
+		@include breakpoint(widescreen) {
+			width: calc(100% - 200px);
+		}
+
+		@include breakpoint(desktop) {
+			width: calc(100% - 160px);
+		}
+
+		@include breakpoint(tablet) {
+			width: auto;
+			margin: 0 -15px;
+			float: none;
+		}
+	}
+
+	.social-item {
+		width: 33.3%;
+		float: left;
+		padding: 0 15px;
+
+		@include breakpoint(tablet) {
+			width: 50%;
+		}
+	}
+
+	.social-img {
+		background-size: cover;
+		background-repeat: no-repeat;
+		margin-bottom: 25px;
+
+		&:before {
+			content: '';
+			display: inline-block;
+			vertical-align: top;
+			padding-bottom: 100%;
+		}
+	}
+}

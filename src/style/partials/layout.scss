@@ -1,0 +1,47 @@
+/*
+* Layout
+*/
+
+.wrapper {
+	padding: 140px 70px 0;
+  position: relative;
+  overflow: hidden;
+
+  @include breakpoint(widescreen) {
+    padding: 120px 85px 0;
+  }
+
+  @include breakpoint(desktop) {
+    padding: 76px 63px 0;
+  }
+
+  @include breakpoint(tablet) {
+    padding: 70px 0 20px;
+  }
+}
+
+.content {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.contact-page {
+	display: none;
+}
+
+.container {
+  padding: 0 120px;
+
+  @include breakpoint(widescreen) {
+    padding: 0 85px;
+  }
+
+  @include breakpoint(desktop) {
+    padding: 0 65px;
+  }
+
+  @include breakpoint(tablet) {
+    padding: 0 30px;
+  }
+}

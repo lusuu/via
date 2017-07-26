@@ -1,0 +1,47 @@
+/*
+* Buttons
+*/
+
+.button {
+	position: relative;
+	background: #f9f9f9;
+	transform: skewX(-20deg);
+	text-transform: uppercase;
+	padding: 4px 23px 2px;
+	display: inline-block;
+	font: 13px/23px 'simplon_normmedium', Arial, Helvetica, sans-serif;
+	letter-spacing: 3px;
+	overflow: hidden;
+	transition: color .3s;
+
+	@include breakpoint(tablet) {
+		font-size: 11px;
+	}
+
+	&:hover {
+		color: #fff;
+
+		&:before {
+			left: 0;
+		}
+	}
+
+	&:before {
+		content: '';
+		background: #000;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: -95%;
+		transition: left .3s;
+		z-index: 1;
+	}
+
+	span {
+		transform: skewX(20deg);
+		display: block;
+		position: relative;
+		z-index: 2;
+	}
+}

@@ -1,0 +1,19 @@
+/*
+* Social links
+*/
+
+.social-links {
+	@extend .listreset;
+
+	li {
+		display: inline-block;
+		vertical-align: middle;
+		padding-right: 20px;
+	}
+
+	a {
+		&:hover {
+			color: #b3b3b3;
+		}
+	}
+}

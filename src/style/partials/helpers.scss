@@ -1,0 +1,95 @@
+/*
+* Helpers classes
+*/
+
+.align-center {
+	text-align: center;
+}
+
+.alignright {
+	float: right !important;
+}
+
+.alignleft {
+	float: left !important;
+}
+
+.listreset {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+.mobile-visible {
+	@media only screen and (min-width: 1024px) {
+		display: none !important;
+	}
+}
+
+.mobile-hidden {
+	@media only screen and (max-width: 767px) {
+		display: none !important;
+	}
+}
+
+.tablet-hidden {
+  @media only screen and (max-width: 1023px) {
+    display: none !important;
+  }
+}
+
+.desktop-hidden {
+  @media only screen and (max-width: 1200px) {
+    display: none !important;
+  }
+}
+
+@mixin breakpoint($point) {
+  @if $point == widescreen {
+     @media (max-width: 1200px) { @content ; }
+  }
+	@if $point == desktop {
+		 @media (max-width: 1023px) { @content ; }
+	}
+	@else if $point == tablet {
+		 @media (max-width: 767px) { @content ; }
+	}
+	@else if $point == mobile {
+		 @media (max-width: 560px) { @content ; }
+	}
+}
+
+@mixin gridClasses($gridColumns:10){
+	@for $i from 1 through $gridColumns {
+    .col-xs-#{$i} {
+      float: left;
+      width: percentage($i/$gridColumns);
+    }
+  }
+
+  @media screen and (min-width:768px) {
+    @for $i from 1 through $gridColumns {
+      .col-sm-#{$i} {
+        float: left;
+        width: percentage($i/$gridColumns);
+      }
+    }
+  }
+
+  @media screen and (min-width:1024px) {
+    @for $i from 1 through $gridColumns {
+      .col-md-#{$i} {
+        float: left;
+        width: percentage($i/$gridColumns);
+      }
+    }
+  }
+}

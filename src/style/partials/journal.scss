@@ -1,0 +1,171 @@
+/*
+* Journal
+*/
+
+.journal {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 127px 15px 83px;
+
+	@include breakpoint(widescreen) {
+		padding: 23px 15px 120px;
+		margin: 0 -30px;
+	}
+
+	@include breakpoint(desktop) {
+		margin: 0;
+		padding: 60px 15px 67px;
+	}
+
+	@include breakpoint(tablet) {
+		padding: 0 15px 80px;
+	}
+
+	.container {
+		@extend .clearfix;
+
+		@include breakpoint(widescreen) {
+			padding: 0;
+		}
+	}
+
+	.heading {
+		position: relative;
+		float: left;
+		width: 225px;
+
+		@include breakpoint(widescreen) {
+			width: 185px;
+		}
+
+		@include breakpoint(desktop) {
+			width: 175px;
+		}
+
+		@include breakpoint(tablet) {
+			float: none;
+			width: 100%;
+			padding: 0 0 17px 30px;
+		}
+
+		h2 {
+			margin-bottom: 35px;
+
+			@include breakpoint(widescreen) {
+				font-size: 36px;
+				margin-bottom: 37px;
+			}
+
+			@include breakpoint(desktop) {
+				font-size: 24px;
+				margin-bottom: 16px;
+			}
+
+			@include breakpoint(tablet) {
+				display: inline-block;
+				vertical-align: top;
+				margin-right: 50px;
+			}
+		}
+
+		.icon-slash {
+			display: block;
+			margin-bottom: 30px;
+			font-size: 129px;
+
+			@include breakpoint(widescreen) {
+				font-size: 120px;
+				margin-bottom: 36px;
+			}
+
+			@include breakpoint(desktop) {
+				font-size: 65px;
+				margin-bottom: 27px;
+			}
+
+			@include breakpoint(tablet) {
+				font-size: 55px;
+				margin-bottom: 18px;
+			}
+		}
+
+		.read-more {
+			@include breakpoint(tablet) {
+				margin-top: 3px;
+			}
+		}
+	}
+
+	.journal-list {
+		float: left;
+		width: calc(100% - 210px);
+		margin-right: -15px;
+
+		@include breakpoint(widescreen) {
+			width: calc(100% - 200px);
+		}
+
+		@include breakpoint(desktop) {
+			width: calc(100% - 222px);
+		}
+
+		@include breakpoint(tablet) {
+			width: auto;
+			margin: 0 -15px;
+		}
+
+		.img {
+			background-size: cover;
+			background-repeat: no-repeat;
+			margin-bottom: 25px;
+
+			@include breakpoint(widescreen) {
+				margin-bottom: 44px;
+			}
+
+			@include breakpoint(desktop) {
+				margin-bottom: 22px;
+			}
+
+			&:before {
+				content: '';
+				display: inline-block;
+				vertical-align: top;
+				padding-bottom: 123%;
+			}
+		}
+	}
+
+	.journal-item {
+		width: 33.3%;
+		float: left;
+		padding: 0 15px;
+
+		@include breakpoint(desktop) {
+			width: 50%;
+		}
+
+		p {
+			margin-bottom: 13px;
+
+			@include breakpoint(desktop) {
+				margin-bottom: 16px;
+			}
+		}
+	}
+
+	a {
+		&:hover {
+			color: #000;
+
+			.read-more {
+				&:after {
+					transform: rotate(25deg);
+				}
+				&:before {
+					transform: rotate(-25deg);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,142 @@
+/*
+* View projects
+*/
+
+.view-projects {
+  cursor: pointer;
+  margin: 0 -20px 100px;
+  overflow: hidden;
+  padding: 5px 0;
+  height: 474px;
+  position: relative;
+
+  @include breakpoint(widescreen) {
+    margin: 0 -45px 65px;
+    height: 340px;
+  }
+
+  @include breakpoint(desktop) {
+    height: 260px;
+    margin: 0 -40px 65px;
+  }
+
+  @include breakpoint(tablet) {
+    margin: 0 5px 50px;
+    height: 230px;
+  }
+
+	#pattern {
+    height: 464px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    transform: translateZ(0);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    @include breakpoint(widescreen) {
+      height: 336px;
+    }
+
+    @include breakpoint(desktop) {
+      height: 256px;
+    }
+
+    @include breakpoint(tablet) {
+      height: 224px;
+    }
+
+    div {
+      display: inline-block;
+      vertical-align: top;
+      width: 16px;
+      height: 16px;
+      text-align: center;
+
+      &:hover {
+
+        i {
+          transform: scale(3);
+          transform-origin: 50% 50%;
+          color: #b3b3b3;
+          transition: transform .05s color .05s;
+        }
+      }
+
+      i {
+        font-size: 4px;
+        line-height: 16px;
+        display: block;
+        transition: transform .5s;
+        color: #ededed;
+      }
+    }
+  }
+
+  .link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 115px;
+    font-size: 54px;
+    line-height: 60px;
+    min-height: 130px;
+    min-width: 435px;
+    z-index: 10;
+
+    @include breakpoint(widescreen) {
+      font-size: 48px;
+    }
+
+    @include breakpoint(desktop) {
+      font-size: 32px;
+      min-width: 255px;
+      min-height: 70px;
+      margin-left: 75px;
+    }
+
+    @include breakpoint(tablet) {
+      font-size: 24px;
+      min-width: 200px;
+      min-height: 40px;
+      margin-left: 0;
+    }
+
+    .icon-slash {
+      font-size: 129px;
+      display: inline-block;
+      vertical-align: middle;
+
+      @include breakpoint(widescreen) {
+        font-size: 120px;
+      }
+
+      @include breakpoint(desktop) {
+        font-size: 65px;
+      }
+
+      @include breakpoint(tablet) {
+        font-size: 45px;
+      }
+    }
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      padding: 5px 0 0 40px;
+
+      @include breakpoint(widescreen) {
+        padding-left: 25px;
+      }
+
+      @include breakpoint(desktop) {
+        padding: 0 0 0 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,137 @@
+/*
+* Article
+*/
+
+.article,
+.section {
+  padding: 14px 0 100px;
+
+  @include breakpoint(widescreen) {
+    padding: 0 0 50px;
+  }
+
+  @include breakpoint(desktop) {
+    padding: 4px 0 50px;
+  }
+
+  @include breakpoint(tablet) {
+    padding: 7px 0 12px;
+  }
+
+  .back {
+    margin-bottom: 20px;
+
+    @include breakpoint(widescreen) {
+      margin-bottom: 13px;
+    }
+
+    @include breakpoint(tablet) {
+      display: none;
+    }
+  }
+
+  .article-heading,
+  .section-heading {
+    padding-bottom: 60px;
+
+    @include breakpoint(widescreen) {
+      padding-bottom: 7px;
+    }
+
+    @include breakpoint(desktop) {
+      padding-bottom: 14px;
+    }
+
+    @include breakpoint(tablet) {
+      padding: 0 0 2px 30px;
+    }
+
+    h3 {
+      float: left;
+      width: 50%;
+      margin-top: 3px;
+
+      @include breakpoint(tablet) {
+        float: none;
+        width: 100%;
+      }
+
+      .icon-slash {
+        font-size: 50px;
+        display: inline-block;
+        vertical-align: middle;
+
+        @include breakpoint(desktop) {
+          font-size: 36px;
+        }
+
+        @include breakpoint(tablet) {
+          font-size: 30px;
+        }
+      }
+
+      span {
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 22px;
+
+        @include breakpoint(desktop) {
+          padding-left: 17px;
+        }
+
+        @include breakpoint(tablet) {
+          padding-left: 10px;
+        }
+      }
+    }
+
+    h2 {
+      float: right;
+      width: 50%;
+      padding: 0 15px;
+
+      @include breakpoint(widescreen) {
+        padding-top: 8px;
+      }
+
+      @include breakpoint(tablet) {
+        float: none;
+        width: 100%;
+        padding: 15px 0;
+      }
+    }
+  }
+
+  h3 {
+    @include breakpoint(tablet) {
+      margin-bottom: 12px;
+    }
+  }
+
+  .content-box {
+    h2 {
+      margin-top: -10px;
+
+      @include breakpoint(desktop) {
+        margin-top: -5px;
+      }
+    }
+  }
+
+  ul {
+    @extend .listreset;
+    margin-bottom: 26px;
+
+    li{
+      padding-left: 28px;
+      position: relative;
+
+      &:before {
+        content: '/';
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+}

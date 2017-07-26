@@ -1,0 +1,54 @@
+/*
+* Links
+*/
+
+.back,
+.read-more {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	text-transform: uppercase;
+	font-size: 13px;
+	letter-spacing: 3px;
+
+	&:hover {
+		color: #000;
+
+		&:after {
+			transform: rotate(25deg);
+		}
+		&:before {
+			transform: rotate(-25deg);
+		}
+	}
+
+	&:after,
+	&:before {
+		content: '';
+		position: absolute;
+		top: 12px;
+		height: 1px;
+		width: 10px;
+		background: #000;
+		transform-origin: 0 0;
+		transition: transform 0.3s;
+		left: -24px;
+
+		@include breakpoint(desktop) {
+			top: 11px;
+		}
+	}
+}
+
+.read-more {
+	&:after,
+	&:before {
+		transform-origin: 100% 0;
+		left: auto;
+		right: -18px;
+	}
+}
+
+.back {
+	margin-left: 24px;
+}

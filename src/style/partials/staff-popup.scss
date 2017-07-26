@@ -1,0 +1,276 @@
+/*
+* Staff popup
+*/
+
+.staff-popup {
+  opacity: 0;
+  visibility: hidden;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity .2s ease, visibility .2s;
+  z-index: 1100;
+  padding-left: 100px;
+
+  @include breakpoint(desktop) {
+    padding-left: 78px;
+  }
+
+  @include breakpoint(tablet) {
+    padding-left: 15px;
+  }
+
+  .staff-overlay {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: rgba(#000, .75);
+    width: 100%;
+    height: 100%;
+  }
+
+  .staff-member {
+    float: right;
+    transform: translateX(20%);
+    max-width: 1200px;
+    height: 100vh;
+    background: #fff;
+    display: block !important;
+    opacity: 0;
+    overflow-y: auto;
+    transition: opacity .2s ease, transform .2s;
+    padding: 57px 118px;
+    position: relative;
+    z-index: 2;
+
+    @include breakpoint(widescreen) {
+      padding: 45px 85px;
+    }
+
+    @include breakpoint(desktop) {
+      padding: 32px 44px;
+    }
+
+    @include breakpoint(tablet) {
+      padding: 20px 30px;
+    }
+
+    .staff-popup-active & {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .staff-popup-active & {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .holder {
+    @extend .clearfix;
+  }
+
+  .title {
+    padding: 0 0 75px 2px;
+
+    @include breakpoint(widescreen) {
+      padding: 0 0 40px;
+    }
+
+    @include breakpoint(desktop) {
+      padding: 0 0 25px;
+    }
+
+    @include breakpoint(tablet) {
+      padding: 0;
+    }
+
+    h3 {
+      letter-spacing: 4px;
+
+      @include breakpoint(desktop) {
+        letter-spacing: 3px;
+      }
+    }
+
+    .icon-slash {
+      font-size: 50px;
+      display: inline-block;
+      vertical-align: top;
+
+      @include breakpoint(desktop) {
+        font-size: 32px;
+      }
+
+      @include breakpoint(tablet) {
+        font-size: 30px;
+      }
+    }
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 8px 0 0 22px;
+
+      @include breakpoint(desktop) {
+        margin: 3px 0 0 16px;
+      }
+
+      @include breakpoint(tablet) {
+        width: calc(100% - 90px);
+        margin: 5px 0 0 13px;
+      }
+    }
+  }
+
+  .photo {
+    width: 46.5%;
+    float: left;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    margin-right: 150px;
+
+    @include breakpoint(widescreen) {
+      width: 41.5%;
+      margin-right: 115px;
+    }
+
+    @include breakpoint(desktop) {
+      width: 34.5%;
+      margin-right: 63px;
+    }
+
+    @include breakpoint(tablet) {
+      width: 93%;
+      float: none;
+      margin: 0 0 34px;
+    }
+
+    &:before {
+      content: '';
+      padding-bottom: 123%;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+
+  .info {
+    overflow: hidden;
+    padding-right: 35px;
+
+    @include breakpoint(widescreen) {
+      padding-right: 0;
+    }
+
+    @include breakpoint(desktop) {
+      padding-right: 35px;
+    }
+
+    @include breakpoint(tablet) {
+      padding-right: 0;
+    }
+
+    h2 {
+      margin: -7px 0 2px;
+
+      @include breakpoint(widescreen) {
+        margin: -5px 0 5px;
+      }
+
+      @include breakpoint(desktop) {
+        margin: -6px 0 7px;
+      }
+    }
+
+    h3 {
+      margin-bottom: 3px;
+
+      @include breakpoint(tablet) {
+        margin-bottom: 6px;
+      }
+    }
+
+    .meta {
+      @extend .listreset;
+      padding-bottom: 30px;
+
+      @include breakpoint(tablet) {
+        padding-bottom: 20px;
+      }
+
+      li {
+        display: inline-block;
+        vertical-align: top;
+        padding-right: 8px;
+
+        &:first-child {
+          &:before {
+            display: none;
+          }
+        }
+
+        &:before {
+          content: '/';
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+
+  .staff-close {
+    position: absolute;
+    right: 71px;
+    top: 78px;
+    text-transform: uppercase;
+    font: 13px 'simplon_normmedium';
+    letter-spacing: 3px;
+
+    @include breakpoint(widescreen) {
+      right: 18px;
+      top: 66px;
+    }
+
+    @include breakpoint(desktop) {
+      right: 12px;
+      top: 34px;
+    }
+
+    @include breakpoint(tablet) {
+      font-size: 8px;
+      letter-spacing: 1px;
+      right: 16px;
+      top: 42px;
+    }
+
+    i {
+      font-size: 16px;
+      display: inline-block;
+      vertical-align: middle;
+      margin: -5px 0 0 6px;
+
+      @include breakpoint(desktop) {
+        font-size: 12px;
+        margin-top: -7px;
+      }
+
+      @include breakpoint(tablet) {
+        position: absolute;
+        top: -16px;
+        left: -1px;
+        font-size: 15px;
+      }
+    }
+  }
+
+  .button-holder {
+    padding: 15px 5px;
+
+    @include breakpoint(tablet) {
+      padding: 10px 5px;
+    }
+  }
+}

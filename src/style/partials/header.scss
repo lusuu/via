@@ -1,0 +1,315 @@
+/*
+* Header
+*/
+.header {
+	position: fixed;
+	left: 40px;
+	right: 40px;
+	top: 0;
+	z-index: 100;
+	transition: background 0.3s;
+
+	@include breakpoint(widescreen) {
+		left: 32px;
+		right: 32px;
+	}
+
+	@include breakpoint(desktop) {
+		left: 24px;
+		right: 24px;
+	}
+
+	@include breakpoint(tablet) {
+		left: 0;
+		right: 0;
+	}
+
+	&.fixed-header {
+		background: #fff;
+
+		.holder {
+			padding: 5px 85px 9px;
+
+			@include breakpoint(widescreen) {
+				padding: 5px 68px 9px;
+			}
+
+			@include breakpoint(desktop) {
+				padding: 5px 54px 9px;
+			}
+
+			@include breakpoint(tablet) {
+				padding: 5px 15px 9px;
+			}
+		}
+
+		.logo {
+			height: 15px;
+			width: 60px;
+			overflow: hidden;
+			margin-top: 10px;
+		}
+
+		.navigation-holder {
+			margin-top: 8px;
+
+			@include breakpoint(desktop) {
+				margin: 0;
+			}
+		}
+	}
+
+	.holder {
+		max-width: 1340px;
+		margin: 0 auto;
+		padding: 45px 85px;
+		transition: padding 0.3s;
+
+		@include breakpoint(widescreen) {
+			padding: 38px 68px;
+		}
+
+		@include breakpoint(desktop) {
+			padding: 28px 54px 10px;
+		}
+
+		@include breakpoint(tablet) {
+			padding: 22px 15px 10px;
+		}
+
+		@extend .clearfix;
+	}
+
+	.logo {
+		width: 200px;
+		float: left;
+		transition: margin .3s;
+
+		@include breakpoint(desktop) {
+			width: 150px;
+		}
+
+		img {
+			width: 200px;
+			height: 34px;
+			max-width: none;
+
+			@include breakpoint(desktop) {
+				width: 135px;
+				height: 23px;
+			}
+		}
+	}
+
+	.nav-opener {
+		display: none;
+		text-transform: uppercase;
+		font: 13px 'simplon_normmedium', Arial, Helvetica, sans-serif;
+		letter-spacing: 2px;
+		position: relative;
+		z-index: 10;
+
+		@include breakpoint(desktop) {
+			display: block;
+			float: right;
+			margin: 12px -4px 0 0;
+		}
+
+		@include breakpoint(tablet) {
+			margin: 0;
+			font-size: 8px;
+		}
+
+		.icon-menu {
+			float: right;
+			font-size: 10px;
+			padding: 2px 0 0 13px;
+
+			@include breakpoint(tablet) {
+				float: none;
+				display: block;
+				font-size: 14px;
+				padding: 0 0 6px 2px;
+			}
+		}
+
+		.nav-active & {
+			.menu {
+				display: none;
+			}
+
+			.menu-close {
+				display: block;
+			}
+		}
+
+		.menu-close {
+			display: none;
+		}
+
+		.icon-close {
+			float: right;
+			font-size: 11px;
+			padding: 0 0 0 13px;
+
+			@include breakpoint(tablet) {
+				float: none;
+				display: block;
+				font-size: 14px;
+				padding: 0 0 6px 2px;
+				text-align: center;
+			}
+		}
+	}
+
+	.social-links {
+		display: none;
+		@extend .clearfix;
+
+		@include breakpoint(desktop) {
+			display: block;
+		}
+
+		.social-menu {
+			@extend .listreset;
+			font-size: 16px;
+			overflow: hidden;
+		}
+
+		span {
+			float: left;
+			font-size: 18px;
+			padding: 3px 30px 0 0;
+
+			@include breakpoint(tablet) {
+				font-size: 16px;
+				float: none;
+				display: block;
+				padding-bottom: 17px;
+			}
+		}
+	}
+}
+
+.navigation-holder {
+	float: right;
+	margin: 15px 32px 0 0;
+	transition: margin .3s;
+
+	@include breakpoint(widescreen) {
+		margin: 15px 49px 0 0;
+	}
+
+	@include breakpoint(desktop) {
+		visibility: hidden;
+		opacity: 0;
+		position: absolute;
+		left: -24px;
+		top: 0;
+		width: 100vw;
+		transition: visibility .2, opacity .2s;
+		margin: 0;
+		background: rgba(#000, .75);
+	}
+
+	@include breakpoint(tablet) {
+		left: 0;
+	}
+
+	.nav-active & {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	.navigation-block {
+		@include breakpoint(desktop) {
+			width: 458px;
+			background: #fff;
+			float: right;
+			height: 100vh;
+			overflow-y: auto;
+			padding: 152px 0 40px 83px;
+			right: -100px;
+			opacity: 0;
+			transition: right .25s ease, opacity .25s ease;
+			position: relative;
+
+			.nav-active & {
+				right: 0;
+				opacity: 1;
+			}
+		}
+
+		@include breakpoint(tablet) {
+			width: 270px;
+			padding: 17px 0 40px 31px;
+		}
+	}
+}
+
+.navigation {
+	@extend .listreset;
+	font: 13px/28px 'simplon_normmedium', Arial, Helvetica, sans-serif;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+
+	@include breakpoint(desktop) {
+		font: 24px/34px 'simplon_normlight', Arial, Helvetica, sans-serif;
+		text-transform: none;
+		letter-spacing: 0;
+		padding-bottom: 66px;
+	}
+
+	@include breakpoint(tablet) {
+		font-size: 17px;
+		line-height: 32px;
+		padding-bottom: 36px;
+	}
+
+	li {
+		display: inline-block;
+		vertical-align: top;
+		margin-left: 85px;
+		position: relative;
+
+		@include breakpoint(widescreen) {
+			margin-left: 50px;
+		}
+
+		@include breakpoint(desktop) {
+			display: block;
+			margin: 0 0 40px;
+		}
+
+		@include breakpoint(tablet) {
+			margin-bottom: 10px;
+		}
+
+		&:hover {
+			a {
+				color: #b3b3b3;
+			}
+
+			&:after {
+				color: #b3b3b3;
+			}
+		}
+
+		&:after {
+			content: '/';
+			position: absolute;
+			left: -12px;
+			top: 0;
+			transition: color .3s;
+
+			@include breakpoint(desktop) {
+				display: none;
+			}
+		}
+	}
+
+	a {
+		color: #000;
+		text-decoration: none;
+	}
+}

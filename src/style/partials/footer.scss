@@ -1,0 +1,129 @@
+/*
+* Footer
+*/
+
+.footer {
+  .holder {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @include breakpoint(desktop) {
+      margin: 0 -20px;
+      padding: 0 15px 0 35px;
+    }
+
+    @include breakpoint(tablet) {
+      margin: 0;
+      padding-left: 65px;
+    }
+  }
+
+  .row {
+    padding-bottom: 65px;
+    margin: 0;
+
+    @include breakpoint(desktop) {
+      padding-bottom: 50px;
+    }
+  }
+
+  a {
+    color: #000;
+
+    &:hover {
+      color: #b3b3b3;
+    }
+  }
+
+  &-logo {
+    display: block;
+    width: 200px;
+    height: 34px;
+    margin-bottom: 43px;
+
+    @include breakpoint(desktop) {
+      width: 135px;
+      height: 24px;
+    }
+  }
+
+  &-info {
+    font-size: 12px;
+    line-height: 20px;
+    float: left;
+    width: 41%;
+
+    @include breakpoint(desktop) {
+      width: 57%;
+    }
+
+    @include breakpoint(tablet) {
+      width: 100%;
+    }
+  }
+
+  .tel {
+    a {
+      margin-left: 12px;
+    }
+  }
+
+  address {
+    font-style: normal;
+  }
+
+  &-nav {
+    overflow: hidden;
+
+    ul {
+      @extend .listreset;
+      float: left;
+      width: 35%;
+
+      @include breakpoint(desktop) {
+        padding-top: 2px;
+        width: calc((100% - 20px) / 2);
+      }
+
+      &.social-list {
+        width: 30%;
+
+        @include breakpoint(desktop) {
+          width: 20px;
+        }
+      }
+
+      li {
+        padding-bottom: 20px;
+
+        @include breakpoint(desktop) {
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: .5px;
+    padding-bottom: 10px;
+  }
+
+  .social-list {
+    @media only screen and (max-width: 1023px) {
+      width: 50px;
+    }
+
+    i {
+      padding-right: 17px;
+    }
+
+    span {
+      @media only screen and (max-width: 1023px) {
+        display: none;
+      }
+    }
+  }
+}
